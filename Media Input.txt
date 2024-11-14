@@ -1,0 +1,15 @@
+Media Input:
+
+1. Mouse Input: Pada fungsi `mousePressed()`, game kami mengambil input dari pengguna melalui klik tombol mouse. Ketika pengguna mengklik tombol mouse, burung dalam permainan akan meloncat ke atas. Ini merupakan salah satu cara pengguna mengontrol burung dan menghindari rintangan.
+
+2. Keyboard Input: Fungsi `keyPressed()` juga digunakan sebagai input alternatif. Ketika pengguna menekan tombol keyboard, seperti tombol spasi, burung dalam permainan akan meloncat ke atas. Ini memberikan opsi alternatif untuk pengguna yang lebih nyaman menggunakan tombol keyboard daripada mouse.
+
+Media Output:
+
+1. Grafis Layar: Game ini menggunakan layar sebagai media output utama. Kami menggunakan Processing untuk membuat grafis di layar. Dengan memasukkan grafis background, burung, rintangan, skor, dan pesan-pesan seperti "Flappy Code" dan "Click to Play" di layar. Grafis ini menggambarkan elemen-elemen permainan kepada pengguna.
+
+2. Pesan Teks: Game ini menampilkan pesan-pesan teks di layar, seperti "Flappy Code", "Click to Play", "game over", dan "score". Pesan-pesan ini memberikan informasi dan petunjuk kepada pengguna tentang status permainan, skor mereka, dan cara memulai permainan.
+
+3. Gambar: Kami menggunakan gambar untuk menggambarkan burung dan latar belakang permainan. Gambar ini adalah bagian dari media output yang digunakan untuk membuat elemen visual dalam permainan.
+
+Dengan demikian, media input permainan ini adalah klik mouse dan tombol keyboard yang digunakan untuk mengontrol burung, sedangkan media outputnya adalah grafis layar, pesan teks, dan gambar yang menggambarkan elemen-elemen permainan kepada pengguna.

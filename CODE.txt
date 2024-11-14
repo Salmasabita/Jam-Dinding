@@ -1,0 +1,114 @@
+PImage jam;
+PImage titik;
+PImage jarum_kuning;
+PImage jarum_biru;
+float revJarum_kuning = 0; // Sudut awal
+float revJarum_biru = 0; // Panjang jarum jam
+float centerX = width / 2;
+float centerY = height / 2;
+
+void setup(){
+ size(1000, 1000);
+ jam = loadImage("jam.png");
+ titik = loadImage("titik.png");
+ jarum_kuning = loadImage("jarum_kuning.png");
+ jarum_biru = loadImage("jarum_biru.png");
+
+}
+
+void draw(){
+  //memasukkan gambar
+  background(225);
+  imageMode(CENTER);
+  
+  //jam
+  image(jam, width / 2, height / 2);
+  //titik
+  image(titik, 490, 390);
+  
+  //jarum kuning
+  pushMatrix(); // Simpan matriks transformasi saat ini
+  translate(490, 265);
+  rotate(radians(revJarum_kuning));
+  image(jarum_kuning, 490, 265);
+  popMatrix();
+
+    
+  //jarum biru
+  pushMatrix(); // Simpan matriks transformasi saat ini
+  translate(400, 390); 
+  rotate(radians(revJarum_biru));
+  image(jarum_biru, 400, 390);
+  popMatrix();
+
+  revJarum_kuning += 1; // Contoh: Putar sejauh 1 derajat per frame
+  revJarum_biru += 0.5;
+}
+
+
+kkmcmkd
+
+ image(titik, 490, 390);
+
+FIXX
+
+
+
+PImage jam;
+
+void setup(){
+ size(1000, 1000);
+ jam = loadImage("jam.png");
+ noStroke();
+}
+
+void draw(){
+  //memasukkan gambar
+  background(225);
+  imageMode(CENTER);
+
+  // Menggambar jarum detik
+  float secondAngle = radians(map(second(), 0, 60, 0, 360)) - HALF_PI;
+  float minuteAngle = radians(map(minute(), 0, 60, 0, 360)) - HALF_PI;
+  float hourAngle = radians(map(hour() % 12, 0, 12, 0, 360)) - HALF_PI;
+
+  //jam
+  image(jam, width / 2, height / 2);
+  //titik
+
+  
+  // Menggambar angka setiap jam
+  for (int i = 1; i <= 12; i++) {
+    float angle = radians(map(i, 0, 12, 0, 360)) - HALF_PI;
+    float x = cos(angle) * 160; // Menggeser angka ke dalam
+    float y = sin(angle) * 160; // Menggeser angka ke dalam
+    fill(#8E7936);
+    textAlign(CENTER, CENTER);
+    textSize(48);
+    text(i, x, y); // Menyesuaikan posisi angka jam
+  }
+
+  // Menggambar jarum detik
+  float secondAngle = radians(map(second(), 0, 60, 0, 360)) - HALF_PI;
+  float minuteAngle = radians(map(minute(), 0, 60, 0, 360)) - HALF_PI;
+  float hourAngle = radians(map(hour() % 12, 0, 12, 0, 360)) - HALF_PI;
+
+  // Jarum detik
+  stroke(#7888B2);
+  strokeWeight(4);
+  line(0, 0, cos(secondAngle) * 160, sin(secondAngle) * 160); // Menyesuaikan posisi jarum detik
+
+  // Jarum menit
+  stroke(#78B2A4);
+  strokeWeight(8);
+  line(0, 0, cos(minuteAngle) * 120, sin(minuteAngle) * 120); // Menyesuaikan posisi jarum menit
+
+  // Jarum jam
+  stroke(0);
+  strokeWeight(10);
+  line(0, 0, cos(hourAngle) * 80, sin(hourAngle) * 80); // Menyesuaikan posisi jarum jam
+
+  // Menggambar titik tengah jam
+  fill(0);
+  ellipse(0, 0, 20, 20); // Menyesuaikan posisi titik tengah jam
+}
